@@ -42,13 +42,13 @@ class RegisteredUserController extends Controller
             'correo' => $request->correo,
             'telefono' => $request->telefono,
             'password' => Hash::make($request->telefono),
-            'foto' => $request->file('foto')->store('fotos') 
+            'foto' => $request->file('foto')->store('public/fotos') 
         ]);
 
         event(new Registered($user));
+ 
+        // Auth::login($user);
 
-        Auth::login($user);
-
-        return redirect(RouteServiceProvider::HOME);
+        return redirect()->route('register')->with('success', 'Usuario registrado exitosamente');
     }
 }
