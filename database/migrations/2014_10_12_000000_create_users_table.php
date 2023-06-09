@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('telefono')->unique();
             $table->string('password');
             $table->string('foto');
+            $table->string('foto_logos')->nullable();
             $table->tinyInteger ('legal')->default(1);
             $table->timestamps();
         });

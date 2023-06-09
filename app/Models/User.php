@@ -22,6 +22,7 @@ class User extends Authenticatable
         'correo',
         'telefono',
         'foto',
+        'foto_logos',
         'password',
     ];
 }

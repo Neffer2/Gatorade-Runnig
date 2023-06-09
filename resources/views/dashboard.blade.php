@@ -2,11 +2,9 @@
     @section('content')
         Deten el tiepo en tu mano
          @php 
-         $aux = Auth::user()->foto;
-        @endphp
+            $aux = Auth::user()->foto;
+         @endphp
         <img id="imagen" src="" alt="" height="500">
-
-
 
         <a id="image-download" href="" download="Gatorade Runnig Series">Download</a>
 
@@ -38,6 +36,7 @@
     @endsection 
     @section('scripts') 
     <script>
+         let imagenLogo = "";
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
         const originalImage = new Image();
@@ -71,6 +70,42 @@
         const imageWithLogo = new Image();
         imageWithLogo.src = canvas.toDataURL();
 
+        /* ***** */
+        // Decodificar la imagen Base64
+         const imageData = imageWithLogo.src.split(',')[1];
+         const decodedImageData = atob(imageData);
+
+         // Convertir la imagen decodificada en un arreglo de bytes
+         const byteCharacters = decodedImageData.split('').map(char => char.charCodeAt(0));
+         const byteArray = new Uint8Array(byteCharacters);
+
+         // Crear un objeto Blob a partir del arreglo de bytes
+         const blob = new Blob([byteArray], { type: 'image/png' }); // Ajusta el tipo MIME según el formato de la imagen
+
+         // Crear un objeto FormData y agregar el blob
+         const formData = new FormData();
+         formData.append('image', blob, 'image.png'); // El último parámetro es el nombre del archivo
+         
+         const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+         fetch('updateLogo', {
+         method: 'POST',
+         body: formData,
+         headers: {
+               'X-CSRF-TOKEN': csrfToken
+            }   
+         })
+         .then(response => response.json())
+         .then(response => {
+            if (response.status == 'ok') {
+               imagenLogo = response.data.logo;
+            }
+         })
+         .catch(error => {
+            // Manejar el error en caso de fallo en la solicitud
+            // console.error('Error en la solicitud:', error);
+         });
+        /* ***** */
+
         document.getElementById('imagen').src = imageWithLogo.src;
         document.getElementById('image-download').href = imageWithLogo.src;
         });
@@ -90,7 +125,7 @@
               let shareUrl;
               switch (platform) {
                  case 'facebook':
-                 shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${document.getElementById('imagen').src}`;
+                 shareUrl = `https://www.facebook.com/sharer/sharer.php?u=http://localhost:8000/fotos_logo/${imagenLogo}`;
                  break;
                  case 'twitter':
                  shareUrl = `https://twitter.com/share?url=${document.getElementById('imagen').src}`;
