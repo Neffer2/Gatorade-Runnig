@@ -17,17 +17,8 @@
          <button class="share-button facebook">
             <i class="fab fa-facebook-f"></i>
         </button>
-        <button class="share-button twitter">
-           <i class="fab fa-twitter"></i>
-        </button>
-        <button class="share-button linkedin">
-           <i class="fab fa-linkedin-in"></i>
-        </button>
-        <button class="share-button pinterest">
-           <i class="fab fa-pinterest"></i>
-        </button>
-        <button class="share-button reddit">
-           <i class="fab fa-reddit-alien"></i>
+        <button class="share-button instagram">
+         <i class="fa-brands fa-instagram"></i>
         </button>
         <button class="share-button whatsapp">
            <i class="fab fa-whatsapp"></i>
@@ -127,20 +118,11 @@
                  case 'facebook':
                  shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${window.location.hostname}/fotos_logo/${imagenLogo}`;
                  break;
-                 case 'twitter':
-                 shareUrl = `https://twitter.com/share?url=${document.getElementById('imagen').src}`;
-                 break;
-                 case 'linkedin':
-                 shareUrl = `https://www.linkedin.com/shareArticle?url=${document.getElementById('imagen').src}`;
-                 break;
-                 case 'pinterest':
-                 shareUrl = `https://pinterest.com/pin/create/button/?url=${document.getElementById('imagen').src}`;
-                 break;
-                 case 'reddit':
-                 shareUrl = `https://reddit.com/submit?url=${document.getElementById('imagen').src}`;
+                 case 'instagram':
+                 shareUrl = `https://www.instagram.com/add/?url=${window.location.hostname}/fotos_logo/${imagenLogo}`;
                  break;
                  case 'whatsapp':
-                 shareUrl = `https://api.whatsapp.com/send?text=${document.getElementById('imagen').src}`;
+                 shareUrl = `https://api.whatsapp.com/send?text=${window.location.hostname}/fotos_logo/${imagenLogo}`;
                  break;
               }
               // Open a new window to share the URL
