@@ -1,10 +1,12 @@
 @extends('layouts.main')
     @section('content')
         Deten el tiepo en tu mano
-        @php 
-            $aux = str_replace('public/', '', Auth::user()->foto);
+         @php 
+         $aux = Auth::user()->foto;
         @endphp
         <img id="imagen" src="" alt="" height="500">
+
+
 
         <a id="image-download" href="" download="Gatorade Runnig Series">Download</a>
 
@@ -39,7 +41,7 @@
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
         const originalImage = new Image();
-        originalImage.src = "{{ asset("storage/$aux") }}";
+        originalImage.src = "{{ asset("fotos/$aux") }}";
 
         const logo1 = new Image();
         logo1.src = "{{ asset('logos/logo.png') }}";
