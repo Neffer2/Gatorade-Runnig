@@ -1,10 +1,45 @@
 @extends('layouts.main')
+<style>
+    .share-buttons {
+       display: flex;
+       gap: 10px;
+    }
+    .share-button {
+       border: none;
+       border-radius: 5px;
+       color: #fff;
+       cursor: pointer;
+       font-size: 16px;
+       padding: 8px 16px;
+    }
+    .facebook {
+       background-color: #3b5998;
+    }
+    .twitter {
+       background-color: #1da1f2;
+    }
+    .linkedin {
+       background-color: #0077b5;
+    }
+    .pinterest {
+       background-color: #bd081c;
+    }
+    .reddit {
+       background-color: #ff4500;
+    }
+    .whatsapp {
+       background-color: #25d366;
+    }
+ </style>
     @section('content')
         Deten el tiepo en tu mano
         @php 
             $aux = str_replace('public/', '', Auth::user()->foto);
         @endphp
         <img id="imagen" src="" alt="" height="500">
+
+        <a id="image-download" href="" download="Gatorade Runnig Series">Download</a>
+
         <form action="{{ route('logout') }}" method="POST">
             @csrf
             <button>Salir</button>
@@ -64,6 +99,65 @@
         // console.log();
         // document.body.appendChild(imageWithLogo);
         document.getElementById('imagen').src = imageWithLogo.src;
+        document.getElementById('image-download').href = imageWithLogo.src;
+        });
+    </script>
+     <div class="share-buttons">
+        <button class="share-button facebook">
+           <i class="fab fa-facebook-f"></i>
+        </button>
+        <button class="share-button twitter">
+           <i class="fab fa-twitter"></i>
+        </button>
+        <button class="share-button linkedin">
+           <i class="fab fa-linkedin-in"></i>
+        </button>
+        <button class="share-button pinterest">
+           <i class="fab fa-pinterest"></i>
+        </button>
+        <button class="share-button reddit">
+           <i class="fab fa-reddit-alien"></i>
+        </button>
+        <button class="share-button whatsapp">
+           <i class="fab fa-whatsapp"></i>
+        </button>
+     </div>
+
+     <script>
+        // Get all share buttons
+        const shareButtons = document.querySelectorAll('.share-button');
+        // Add click event listener to each button
+        shareButtons.forEach(button => {
+           button.addEventListener('click', () => {
+              // Get the URL of the current page
+              const url = window.location.href;
+              // Get the social media platform from the button's class name
+              const platform = button.classList[1];
+              // Set the URL to share based on the social media platform
+              let shareUrl;
+              switch (platform) {
+                 case 'facebook':
+                 shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                 break;
+                 case 'twitter':
+                 shareUrl = `https://twitter.com/share?url=${encodeURIComponent(url)}`;
+                 break;
+                 case 'linkedin':
+                 shareUrl = `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(url)}`;
+                 break;
+                 case 'pinterest':
+                 shareUrl = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}`;
+                 break;
+                 case 'reddit':
+                 shareUrl = `https://reddit.com/submit?url=${encodeURIComponent(url)}`;
+                 break;
+                 case 'whatsapp':
+                 shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(url)}`;
+                 break;
+              }
+              // Open a new window to share the URL
+              window.open(shareUrl, '_blank');
+           });
         });
     </script>
     @endsection
