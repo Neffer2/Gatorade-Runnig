@@ -125,7 +125,7 @@
               let shareUrl;
               switch (platform) {
                  case 'facebook':
-                 shareUrl = `https://www.facebook.com/sharer/sharer.php?u=http://localhost:8000/fotos_logo/${imagenLogo}`;
+                 shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${window.location.hostname}/fotos_logo/${imagenLogo}`;
                  break;
                  case 'twitter':
                  shareUrl = `https://twitter.com/share?url=${document.getElementById('imagen').src}`;
