@@ -1,0 +1,128 @@
+ * {
+    box-sizing: border-box;
+    margin: 0 !important;
+    padding: 0 !important;
+ }
+
+ @font-face {
+    font-family: Gatorade-Black;
+    src: url("../fonts/Gatorade-Black.ttf")  format('truetype');
+ }
+  
+ @font-face {
+    font-family: Gatorade-Light;
+    src: url("../fonts/Gatorade-Light.ttf")  format('truetype');
+ }
+
+ @font-face {
+    font-family: Gatorade-Medium;
+    src: url("../fonts/Gatorade-Medium.ttf")  format('truetype');    
+ }
+
+ body {
+    font-family: Gatorade-Medium, Arial, Helvetica, sans-serif;
+    background-image: url('../Landing_con_foto_GATORADE_RUNING_SERIES_Fondo_foto.jpg') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+ }
+
+ .form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-family: Gatorade-Light;
+    color: white; 
+    opacity: .5; /* Firefox */
+ }
+
+ .form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-family: Gatorade-Light;
+    color: white;
+    opacity: .5;
+ }
+
+ .form-control::-ms-input-placeholder { /* Microsoft Edge */
+    font-family: Gatorade-Light;
+    color: white;
+    opacity: .5;
+ }
+ 
+ .custom-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .form-header {
+    padding: 1rem 3rem !important;
+    display: flex;
+    justify-content: center; 
+    color: white;
+    font-weight: 900;
+ }
+
+ .form-content {
+    background-image: url('../Fondo_negro_GATORADE.jpg') !important;
+    background-size: cover;
+ }
+
+ .orange {
+    background-color: #FF5000 !important;
+ }
+
+ .black {
+    background-color: #A0A3A5;
+ }
+
+ .bold {
+    font-weight: bolder !important;
+ }
+
+ .btn-primary {
+    background-color: #FF5000;
+    border-color: #FF5000;
+ }
+
+input[type="text"] {
+    background-color: #A0A3A5;
+    color: rgba(255, 255, 255, 0.4);
+    border-left: none; 
+    border-color: #A0A3A5;
+}
+
+input[type="file"] {
+    background-color: #A0A3A5;
+    color: rgba(255, 255, 255, 0.4);
+    border-left: none; 
+    border-color: #A0A3A5;
+}
+
+input[type="password"] {
+    background-color: #A0A3A5;
+    color: rgba(255, 255, 255, 0.4);
+    border-left: none;
+    border-color: #A0A3A5;
+}
+
+.form-control {
+    padding: .5rem .80rem !important;
+}
+
+.icon-container {
+    color: #A1AFB5;
+    padding: .2rem .5rem !important;
+    border-radius: 20rem;
+    background-color: white;
+}
+
+.input-group-text {
+    padding: 0 .8rem !important;
+    background-color: #A0A3A5;
+    border-color: #A0A3A5;
+}
+
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: #FF5000;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(255, 80, 0,.25);
+}

@@ -1,28 +1,35 @@
 @extends('layouts.main')
-    @section('content')
-        Deten el tiepo en tu mano
-         @php 
-            $aux = Auth::user()->foto;
-         @endphp
-        <img id="imagen" src="" alt="" height="500">
-
-        <a id="image-download" href="" download="Gatorade Runnig Series">Download</a>
-
-        <form action="{{ route('logout') }}" method="POST">
-            @csrf
-            <button>Salir</button>
-        </form>
-
-        <div class="share-buttons">
-         <button class="share-button facebook">
-            <i class="fab fa-facebook-f"></i>
-        </button>
-        <button class="share-button instagram">
-         <i class="fa-brands fa-instagram"></i>
-        </button>
-        <button class="share-button whatsapp">
-           <i class="fab fa-whatsapp"></i>
-        </button>
+   @section('content')
+      <div class="row">
+         <div class="col-md-6 dash-left" id="brand-left"></div>
+         <div class="col-md-6" id="phone"> 
+            <div class="d-flex justify-content-end pe-5">
+               <img src="{{ asset('assets/Landing_con_foto_GATORADE_RUNING_SERIES_Logo_MMC.png') }}" height="100">
+               <img src="{{ asset('assets/Landing_con_foto_GATORADE_RUNING_SERIES_Logo_Team_Gatorade.png') }}" alt="Logo gatorade" height="100">
+            </div>
+            @php 
+               $aux = Auth::user()->foto;
+            @endphp
+            <div class="d-flex justify-content-center">
+               <img id="imagen" src="" alt="" height="350" style="border-radius: 3rem" class="mt-4">
+            </div>
+            <div class="d-flex justify-content-center">
+               <a id="image-download" href="" class="btn btn-primary py-1 px-5 mt-2 me-1" download="Gatorade Runnig Series"><h6 class="bold">DESCARGAR</h6></a>
+               <button class="share-button facebook py-1 px-3 mt-2 me-1">
+                  <i class="fab fa-facebook-f"></i>
+               </button>
+               <button class="share-button instagram py-1 px-3 mt-2 me-1">
+                  <i class="fa-brands fa-instagram"></i>
+               </button>
+               <button class="share-button whatsapp py-1 px-3 mt-2 me-1">
+                  <i class="fab fa-whatsapp"></i>
+               </button>
+            </div>
+            {{-- <form action="{{ route('logout') }}" method="POST">
+               @csrf
+               <button>Salir</button>
+            </form>             --}}
+         </div>
       </div>
     @endsection 
     @section('scripts') 
@@ -40,7 +47,7 @@
         const logo1Width = 200;
         const logo1Height = 73;
         const logo2Width = 200;
-        const logo2Height = 73;
+        const logo2Height = 120;
       
         Promise.all([
             new Promise((resolve) => originalImage.onload = resolve),
@@ -52,7 +59,7 @@
         ctx.drawImage(originalImage, 0, 0);
         const logo1X = 5 ;
         const logo1Y = canvas.height - (logo1Height + 10);
-        ctx.drawImage(logo1, logo1X, logo1Y, logo1Width, logo1Height);
+      //   ctx.drawImage(logo1, logo1X, logo1Y, logo1Width, logo1Height);
 
         const logo2X = canvas.width - (logo2Width + 5);
         const logo2Y = canvas.height - (logo2Height + 10);

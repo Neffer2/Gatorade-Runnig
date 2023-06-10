@@ -1,3 +1,31 @@
+* {
+    box-sizing: border-box;
+    margin: 0 !important; 
+    padding: 0 !important;
+ }
+
+ @font-face {
+    font-family: Gatorade-Black;
+    src: url("../fonts/Gatorade-Black.ttf")  format('truetype');
+ }
+   
+ @font-face {
+    font-family: Gatorade-Light;
+    src: url("../fonts/Gatorade-Light.ttf")  format('truetype');
+ }
+
+ @font-face {
+    font-family: Gatorade-Medium;
+    src: url("../fonts/Gatorade-Medium.ttf")  format('truetype');    
+ }
+
+ body {
+    font-family: Gatorade-Medium, Arial, Helvetica, sans-serif;
+    background-image: url('../Landing_con_foto_GATORADE_RUNING_SERIES_Fondo_foto.jpg') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+ }
+
 .share-buttons {
     display: flex;
     gap: 10px;
@@ -27,4 +55,26 @@
 }
 .whatsapp {
     background-color: #25d366;
+}
+
+.dash-left { 
+    height: 100vh;
+    background-image: url('../Landing_con_foto_GATORADE_RUNING_SERIES_Concepto.png') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+    #brand-left {
+        visibility: hidden;
+        clear: both;
+        float: left;
+        margin: 10px auto 5px 20px;
+        width: 28%;
+        display: none;
+    }
+
+    #phone {
+        height: 100vh;
+    }
 }
