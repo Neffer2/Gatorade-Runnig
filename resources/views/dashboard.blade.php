@@ -46,8 +46,8 @@
         logo2.src = "{{ asset('logos/logo.png') }}";      
         const logo1Width = 200;
         const logo1Height = 73;
-        const logo2Width = 200;
-        const logo2Height = 120;
+        const logo2Width = 626.6;
+        const logo2Height = 508.6;
       
         Promise.all([
             new Promise((resolve) => originalImage.onload = resolve),

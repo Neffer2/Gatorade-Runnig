@@ -35,13 +35,13 @@ class Register extends Component
 
     public function updatedTelefono(){
         $this->validate([
-            'telefono' => 'required|numeric|string|max:10|unique:users'
+            'telefono' => 'required|numeric|string|max:11|unique:users'
         ]); 
     }
 
     public function updatedFoto(){
         $this->validate([
-            'foto' => 'required|image|max:1024'
+            'foto' => 'required|image'
         ]);
     }
 
