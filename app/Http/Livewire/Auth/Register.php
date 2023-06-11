@@ -35,7 +35,7 @@ class Register extends Component
 
     public function updatedTelefono(){
         $this->validate([
-            'telefono' => 'required|numeric|string|max:11|unique:users'
+            'telefono' => 'required|numeric|string|unique:users'
         ]); 
     }
 
