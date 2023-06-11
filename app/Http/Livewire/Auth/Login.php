@@ -24,8 +24,16 @@ class Login extends Component
     }
 
     public function updatedPass(){
-        $this->validate([
+        $this->validate([ 
             'pass' => 'required|string'
         ]);
     }
+
+    protected $messages = [
+        'email.required' => 'Éste campo es obligatorio.',
+        'email.email' => 'Formato de correo electrónico no válido.',
+
+        'pass.required' => 'Éste campo es obligatorio.',
+        'pass.string' => 'Éste formato no es válido.',
+    ];
 }

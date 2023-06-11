@@ -1,7 +1,7 @@
 @extends('layouts.main')
    @section('content')
       <div class="row">
-         <div class="col-md-6 dash-left"></div>
+         <div class="col-md-6 dash-left" id="#bg-left"></div>
          <div class="col-md-6 px-5" id="phone">  
             <div class="d-flex justify-content-around pe-5">
                <img src="{{ asset('assets/Landing_con_foto_GATORADE_RUNING_SERIES_Logo_MMC.png') }}" height="100">

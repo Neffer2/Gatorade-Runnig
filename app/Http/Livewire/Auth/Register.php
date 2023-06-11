@@ -47,7 +47,7 @@ class Register extends Component
 
     protected $messages = [
         'nombre.required' => 'Éste campo es obligatorio.',
-        'nombre.string' => 'Éste formato no es váido.',
+        'nombre..string' => 'Éste formato no es válido.',
         'nombre.max' => 'Tu correo excede nuestro límite de caracteres.',
 
         'correo.required' => 'Éste campo es obligatorio.',
