@@ -72,7 +72,7 @@
     <div class="form-check mt-3 text-white">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required> 
         <label class="form-check-label ms-2" for="flexCheckDefault">
-            He le&iacute;do y acepto los t&eacute;rminos y condiciones.
+            He le&iacute;do y acepto los <a href="{{ asset('Membrete-T&C-“TEAM-GATORADE-RUNNING-SERIES”.pdf') }}" target="_blank">t&eacute;rminos y condiciones</a>.
         </label>
     </div>
 </div>
