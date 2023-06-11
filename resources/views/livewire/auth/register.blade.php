@@ -1,6 +1,6 @@
 <div>
     <div class="form-group mt-3">
-        <div class="input-group flex-nowrap">
+        <div class="input-group flex-nowrap"> 
             <div class="input-group-text"> 
                 <span class="icon-container" id="addon-wrapping">
                     <i class="fa-solid fa-user"></i>
@@ -10,8 +10,8 @@
             placeholder="Nombre" required>
         </div>
         @error('nombre')
-            <div id="nombre" class="invalid-feedback">
-                {{ $message }}
+            <div id="nombre" class="text-danger bold"> 
+                {{ $message }} 
             </div>
         @enderror
     </div> 
@@ -27,7 +27,7 @@
             placeholder="Correo" required>
         </div>
         @error('correo')
-            <div id="correo" class="invalid-feedback">
+            <div id="correo" class="text-danger bold"> 
                 {{ $message }}
             </div>
         @enderror
@@ -44,7 +44,7 @@
             placeholder="Tel&eacute;fono" required>
         </div>
         @error('telefono')
-            <div id="telefono" class="invalid-feedback">
+            <div id="telefono" class="text-danger bold"> 
                 {{ $message }}
             </div>
         @enderror
@@ -64,7 +64,7 @@
             placeholder="Toma tu foto" accept="image/png, image/jpeg" required>
         </div>
         @error('foto')
-            <div id="foto" class="invalid-feedback">
+            <div id="foto" class="text-danger bold"> 
                 {{ $message }}
             </div>
         @enderror

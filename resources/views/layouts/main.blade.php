@@ -10,7 +10,10 @@
     <script src="https://kit.fontawesome.com/15bc5276a1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('assets/css/auth.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
-    <title>Document</title>
+    <link rel="icon" href="https://gatorade.lat/wp-content/media/2021/04/cropped-favicons-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://gatorade.lat/wp-content/media/2021/04/cropped-favicons-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://gatorade.lat/wp-content/media/2021/04/cropped-favicons-180x180.png" />
+    <title>Gatorade Runnig Series</title>
     @livewireStyles
 </head> 
 <body> 

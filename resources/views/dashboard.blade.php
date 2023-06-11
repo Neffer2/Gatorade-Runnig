@@ -1,26 +1,26 @@
 @extends('layouts.main')
    @section('content')
       <div class="row">
-         <div class="col-md-6 dash-left" id="brand-left"></div>
-         <div class="col-md-6" id="phone"> 
-            <div class="d-flex justify-content-end pe-5">
+         <div class="col-md-6 dash-left"></div>
+         <div class="col-md-6 px-5" id="phone">  
+            <div class="d-flex justify-content-around pe-5">
                <img src="{{ asset('assets/Landing_con_foto_GATORADE_RUNING_SERIES_Logo_MMC.png') }}" height="100">
                <img src="{{ asset('assets/Landing_con_foto_GATORADE_RUNING_SERIES_Logo_Team_Gatorade.png') }}" alt="Logo gatorade" height="100">
             </div>
             @php 
                $aux = Auth::user()->foto;
             @endphp
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-start">
                <img id="imagen" src="" alt="" height="350" style="border-radius: 3rem" class="mt-4">
             </div>
-            <div class="d-flex justify-content-center">
-               <a id="image-download" href="" class="btn btn-primary py-1 px-5 mt-2 me-1" download="Gatorade Runnig Series"><h6 class="bold">DESCARGAR</h6></a>
+            <div class="d-flex justify-content-start">
+               <a id="image-download1" href="" class="btn btn-primary py-1 px-5 mt-2 me-1" download="Gatorade Runnig Series"><h6 class="bold">DESCARGAR</h6></a>
                <button class="share-button facebook py-1 px-3 mt-2 me-1">
                   <i class="fab fa-facebook-f"></i>
                </button>
-               <button class="share-button instagram py-1 px-3 mt-2 me-1">
+               <a id="image-download2" class="share-button instagram py-1 px-3 mt-2 me-1">
                   <i class="fa-brands fa-instagram"></i>
-               </button>
+               </a>
                <button class="share-button whatsapp py-1 px-3 mt-2 me-1">
                   <i class="fab fa-whatsapp"></i>
                </button>
@@ -90,7 +90,7 @@
          body: formData,
          headers: {
                'X-CSRF-TOKEN': csrfToken
-            }   
+            }    
          })
          .then(response => response.json())
          .then(response => {
@@ -105,7 +105,8 @@
         /* ***** */
 
         document.getElementById('imagen').src = imageWithLogo.src;
-        document.getElementById('image-download').href = imageWithLogo.src;
+        document.getElementById('image-download1').href = imageWithLogo.src;
+        document.getElementById('image-download2').href = imageWithLogo.src;
         });
     </script>
     
@@ -125,7 +126,7 @@
                  case 'facebook':
                  shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${window.location.hostname}/fotos_logo/${imagenLogo}`;
                  break;
-                 case 'instagram':
+                 case '':
                  shareUrl = `https://www.instagram.com/add/?url=${window.location.hostname}/fotos_logo/${imagenLogo}`;
                  break;
                  case 'whatsapp':

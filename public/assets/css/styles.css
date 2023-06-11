@@ -56,16 +56,16 @@
 .whatsapp {
     background-color: #25d366;
 }
-
+ 
 .dash-left { 
     height: 100vh;
     background-image: url('../Landing_con_foto_GATORADE_RUNING_SERIES_Concepto.png') !important;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
 }
 
 @media (max-width: 768px) {
-    #brand-left {
+    .dash-left {
         visibility: hidden;
         clear: both;
         float: left;
