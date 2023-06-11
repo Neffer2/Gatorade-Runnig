@@ -61,8 +61,8 @@
         const logo1Y = canvas.height - (logo1Height + 10);
       //   ctx.drawImage(logo1, logo1X, logo1Y, logo1Width, logo1Height);
 
-        const logo2X = canvas.width - (logo2Width + 5);
-        const logo2Y = canvas.height - (logo2Height + 10);
+        const logo2X = canvas.width - (logo2Width + 40);
+        const logo2Y = canvas.height - (logo2Height + 20);
         ctx.drawImage(logo2, logo2X, logo2Y, logo2Width, logo2Height);
 
         const imageWithLogo = new Image();
