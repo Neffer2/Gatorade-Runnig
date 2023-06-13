@@ -1,21 +1,35 @@
 @extends('layouts.main')
    @section('content')
       <div class="row">
-         <div class="col-md-6 dash-left" id="bg-left"></div>
-         <div class="col-md-6 px-5" id="phone">  
-            <div class="d-flex justify-content-around pe-5">
-               <img src="{{ asset('assets/Landing_con_foto_GATORADE_RUNING_SERIES_Logo_MMC.png') }}" height="100">
-               <img src="{{ asset('assets/Landing_con_foto_GATORADE_RUNING_SERIES_Logo_Team_Gatorade.png') }}" alt="Logo gatorade" height="100">
+         <div class="col-md-6 d-flex justify-content-start align-items-center dash-left" id="bg-left">
+            <img src="{{ asset('assets/Landing_con_foto_GATORADE_RUNING_SERIES_Concepto.png') }}" alt="">
+         </div>
+         <div class="col-md-6 right-side" id="phone">  
+            <div class="d-flex justify-content-end align-items-center pe-5 logos-header">
+               <img src="{{ asset('assets/Landing_con_foto_GATORADE_RUNING_SERIES_Logo_MMC.png') }}">
+               <img src="{{ asset('assets/Landing_con_foto_GATORADE_RUNING_SERIES_Logo_Team_Gatorade.png') }}" alt="Logo gatorade">
             </div>
             @php 
                $aux = Auth::user()->foto;
             @endphp
-            <div class="d-flex justify-content-start">
-               <img id="imagen" src="" alt="" height="350" style="border-radius: 3rem" class="mt-4">
+            <div class="d-flex justify-content-start image-container">
+               <img id="imagen" src="" alt="" height="350" style="border-radius: 3rem" class="mt-4 shadow-lg">
             </div>
-            <div class="d-flex justify-content-start">
-               <a id="image-download1" href="" class="btn btn-primary py-1 px-5 mt-2 me-1" download="Gatorade Runnig Series"><h6 class="bold">DESCARGAR</h6></a>
-               <button class="share-button facebook py-1 px-3 mt-2 me-1">
+
+            <div class="button-container">
+               <div class="row">
+                  <div class="col-md-6">
+                     <a id="image-download1" href="" class="btn btn-primary py-1 px-5 mt-2 me-1" download="Gatorade Runnig Series">
+                        <h3 class="bold"><i class="fa-solid fa-download"></i> DESCARGAR</h3>
+                     </a>
+                  </div>
+                  <div class="col-md-6">
+                     <a id="image-download1" href="" class="btn btn-primary py-1 px-5 mt-2 me-1" download="Gatorade Runnig Series">
+                        <h3 class="bold"><i class="fa-solid fa-share"></i> COMPARTIR</h3>
+                     </a>
+                  </div>
+               </div>            
+               {{-- <button class="share-button facebook py-1 px-3 mt-2 me-1">
                   <i class="fab fa-facebook-f"></i>
                </button>
                <a id="image-download2" href="" class="share-button instagram py-1 px-3 mt-2 me-1" download="Gatorade Runnig Series">
@@ -23,13 +37,16 @@
                </a>
                <button class="share-button whatsapp py-1 px-3 mt-2 me-1">
                   <i class="fab fa-whatsapp"></i>
-               </button>
+               </button> --}}
             </div>
             {{-- <form action="{{ route('logout') }}" method="POST">
                @csrf
                <button>Salir</button>
             </form>             --}}
          </div>
+         {{-- <div class="col-md-12 d-flex justify-content-end"> 
+            <img src="{{ asset('assets/Landing_con_foto_GATORADE_RUNING_SERIES_Logo_G.png') }}" alt="" height="100">
+         </div> --}}
       </div>
     @endsection 
     @section('scripts') 

@@ -20,6 +20,7 @@
  }
 
  body {
+    height: 100vh;
     font-family: Gatorade-Medium, Arial, Helvetica, sans-serif;
     background-image: url('../Landing_con_foto_GATORADE_RUNING_SERIES_Fondo_foto.jpg') !important;
     background-size: cover;
@@ -57,11 +58,41 @@
     background-color: #25d366;
 }
  
-.dash-left { 
-    height: 100vh;
-    background-image: url('../Landing_con_foto_GATORADE_RUNING_SERIES_Concepto.png') !important;
-    background-size: contain;
+.dash-left img{
+    width: 80%;
+    height: auto;
+}
+
+.image-container {
+    
+}
+
+.right-side {
+    padding-right: 8rem !important;
+    background-image: url('../Landing_con_foto_GATORADE_RUNING_SERIES_Botella_GATORADE.png') !important;
+    background-size: cover;
+    background-position: right;
     background-repeat: no-repeat;
+}
+
+.image-container img{
+    width: 80%;
+    height: auto;
+}
+
+.button-container {
+    padding: 5px 20% 5px 5px !important;
+}
+
+.button-container a, button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logos-header img {
+    width: 15rem;
+    height: auto;
 }
 
 @media (max-width: 768px) {
